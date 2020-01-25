@@ -7,7 +7,7 @@ export default class LocalProductStorage {
   }
 
   setProduct(product) {
-    const products = this.localStorage.getItem(products) || []
+    const products = JSON.parse(this.localStorage.getItem('products')) || []
     const productWithId = {
       ...product,
       id: uuidv4()
@@ -21,7 +21,7 @@ export default class LocalProductStorage {
   }
 
   updateProduct(newProduct) {
-    const products = this.localStorage.getItem(products) || []
+    const products = JSON.parse(this.localStorage.getItem('products')) || []
     const updatedProducts = products.map((product) => {
       if (newProduct.id === product.id) {
         return {
@@ -34,12 +34,10 @@ export default class LocalProductStorage {
   }
 
   deleteProduct(productId){
-    const products = this.localStorage.getItem(products) || []
-    const productsToSave = products.filter( (product) => {
+    const products = JSON.parse(this.localStorage.getItem('products')) || []
+    const productsToSave = products.filter((product) => {
       if(product.id === productId) return
-      return {
-        ...product
-      }
+      return product
     })
     this.localStorage.setItem('products', JSON.stringify(productsToSave))
   }
