@@ -5,65 +5,65 @@
     >
       <template v-slot:default>
         <table>
-        <caption>Products</caption>
-        <thead>
-          <tr>
-            <th class="text-center">Id</th>
-            <th class="text-center">Name</th>
-            <th class="text-center">Description</th>
-            <th class="text-center">Actions</th>
-          </tr>
-        </thead>
-        <tbody
-          class="text-center"
-        >
-          <tr
-            v-if="!products.length"
-          >
-            <td
-              class="text-center font-weight-bold"
-              colspan="4"
-            >
-              Please create a product
-            </td>
-          </tr>
-          <template
-            v-else
+          <caption>Products</caption>
+          <thead>
+            <tr>
+              <th class="text-center">Id</th>
+              <th class="text-center">Name</th>
+              <th class="text-center">Description</th>
+              <th class="text-center">Actions</th>
+            </tr>
+          </thead>
+          <tbody
+            class="text-center"
           >
             <tr
-              v-for="product in products"
-              :key="product.id"
+              v-if="!products.length"
             >
-              <td>{{ product.id }}</td>
-              <td>{{ product.name }}</td>
-              <td>{{ product.description }}</td>
               <td
+                class="text-center font-weight-bold"
+                colspan="4"
               >
-                <div>
-                  <v-btn
-                    small
-                    link
-                    :to="`update-product/${product.id}`"
-                    color="warning"
-                  >
-                    update
-                  </v-btn>
-                  <v-btn
-                    small
-                    color="error"
-                    class="ml-2"
-                    @click="handlerDeleteProduct(product.id)"
-                  >
-                    delete
-                  </v-btn>
-                </div>
+                Please create a product
               </td>
             </tr>
-          </template>
-          <tr>
-            <td
-              colspan="3"
-            />
+            <template
+              v-else
+            >
+              <tr
+                v-for="product in products"
+                :key="product.id"
+              >
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.description }}</td>
+                <td
+                >
+                  <div>
+                    <v-btn
+                      small
+                      link
+                      :to="`update-product/${product.id}`"
+                      color="warning"
+                    >
+                      update
+                    </v-btn>
+                    <v-btn
+                      small
+                      color="error"
+                      class="ml-2"
+                      @click="handlerDeleteProduct(product.id)"
+                    >
+                      delete
+                    </v-btn>
+                  </div>
+                </td>
+              </tr>
+            </template>
+            <tr>
+              <td
+                colspan="3"
+              />
               <td
                 class="text-center"
               >
@@ -74,9 +74,9 @@
                 >
                   create
                 </v-btn>
-            </td>
-          </tr>
-        </tbody>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </template>
     </v-simple-table>
@@ -86,13 +86,11 @@
     >
       <v-card>
         <v-card-title class="headline">Are you sure you want to remove the product?</v-card-title>
-
         <v-card-text>
           After deletion, you will not be able to restore the product
         </v-card-text>
         <v-card-actions>
-          <v-spacer></v-spacer>
-
+          <v-spacer/>
           <v-btn
             color="green darken-1"
             text
@@ -116,9 +114,10 @@
 
 <script>
 
-import LocalProductStorage from '../utils/helpers/LocalProductStorage'
+import LocalProductStorage from '../utils/helpers/localProductStorage'
 
 const localProductStorage = new LocalProductStorage()
+
 export default {
   data:() => {
     return {

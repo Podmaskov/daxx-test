@@ -10,7 +10,7 @@
       :rules="nameRules"
       label="Name"
       required
-    ></v-text-field>
+    />
 
     <v-textarea
       v-model.trim="localForm.description"
@@ -19,30 +19,28 @@
       required
       label="Description"
       type="textarea"
-    >
-    </v-textarea>
-
+    />
     <div
       class="mt-2"
     >
-    <slot>
-      <v-btn
-        color="success"
-        class="mr-4"
-        @click="emitForm()"
-      >
-        Save
-      </v-btn>
-    </slot>
+      <slot>
+        <v-btn
+          color="success"
+          class="mr-4"
+          @click="emitForm()"
+        >
+          Save
+        </v-btn>
+      </slot>
 
-    <v-btn
-      color="error"
-      class="mr-4"
-      @click="emitCancel()"
-    >
-      Cancel
-    </v-btn>
-  </div>
+      <v-btn
+        color="error"
+        class="mr-4"
+        @click="emitCancel()"
+      >
+        Cancel
+      </v-btn>
+    </div>
   </v-form>
 </template>
 
@@ -100,7 +98,3 @@ export default {
 
 }
 </script>
-
-<style>
-
-</style>

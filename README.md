@@ -2,23 +2,12 @@
 
 ## Project setup
 ```
-npm install
+npm run dev
 ```
 
-### Compiles and hot-reloads for development
+### Run tests
 ```
-npm run serve
-```
+npm run test
 
-### Compiles and minifies for production
+P.S I used jest becuse I can't set up ava
 ```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
