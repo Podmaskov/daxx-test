@@ -12,7 +12,7 @@
       required
     ></v-text-field>
 
-    <v-text-field
+    <v-textarea
       v-model.trim="localForm.description"
       :counter="100"
       :rules="descriptionRules"
@@ -20,7 +20,7 @@
       label="Description"
       type="textarea"
     >
-    </v-text-field>
+    </v-textarea>
 
     <div
       class="mt-2"

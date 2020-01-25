@@ -1,9 +1,9 @@
 <template>
 <v-container>
   <transition name="fade">
-    <v-alert 
-      v-if="isNotificationVisible" 
-      type="success" 
+    <v-alert
+      v-if="isNotificationVisible"
+      type="success"
       class="success-message"
     >
       Product saved successfully
@@ -56,3 +56,19 @@ export default {
   }
 }
 </script>
+
+<style>
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity .8s;
+  }
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
+  .success-message{
+    position: absolute;
+    right: 25px;
+    top: 25px;
+  }
+</style>

@@ -10,7 +10,7 @@
     </v-alert>
     </transition>
   <v-card
-    class="mx-auto pa-5"
+    class="mx-auto pa-5 mt-12"
     max-width="450"
     outlined
   >
@@ -68,3 +68,19 @@ export default {
   }
 }
 </script>
+
+<style>
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity .8s;
+  }
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
+  .success-message{
+    position: absolute;
+    right: 25px;
+    top: 25px;
+  }
+</style>
