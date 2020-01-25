@@ -15,9 +15,11 @@
           </tr>
         </thead>
         <tbody
-          v-if="!products.length"
+          class="text-center"
         >
-          <tr>
+          <tr
+            v-if="!products.length"
+          >
             <td
               class="text-center font-weight-bold"
               colspan="4"
@@ -25,40 +27,39 @@
               Please create a product
             </td>
           </tr>
-        </tbody>
-        <tbody
-          v-else
-          class="text-center"
-        >
-          <tr
-            v-for="product in products"
-            :key="product.id"
+          <template
+            v-else
           >
-            <td>{{ product.id }}</td>
-            <td>{{ product.name }}</td>
-            <td>{{ product.description }}</td>
-            <td
+            <tr
+              v-for="product in products"
+              :key="product.id"
             >
-              <div>
-                <v-btn
-                  small
-                  link
-                  :to="`update-product/${product.id}`"
-                  color="warning"
-                >
-                  update
-                </v-btn>
-                <v-btn
-                  small
-                  color="error"
-                  class="ml-2"
-                  @click="handlerDeleteProduct(product.id)"
-                >
-                  delete
-                </v-btn>
-              </div>
-            </td>
-          </tr>
+              <td>{{ product.id }}</td>
+              <td>{{ product.name }}</td>
+              <td>{{ product.description }}</td>
+              <td
+              >
+                <div>
+                  <v-btn
+                    small
+                    link
+                    :to="`update-product/${product.id}`"
+                    color="warning"
+                  >
+                    update
+                  </v-btn>
+                  <v-btn
+                    small
+                    color="error"
+                    class="ml-2"
+                    @click="handlerDeleteProduct(product.id)"
+                  >
+                    delete
+                  </v-btn>
+                </div>
+              </td>
+            </tr>
+          </template>
           <tr>
             <td
               colspan="3"

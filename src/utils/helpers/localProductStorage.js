@@ -20,6 +20,14 @@ export default class LocalProductStorage {
     return JSON.parse(this.localStorage.getItem('products')) || []
   }
 
+  getProduct(productId) {
+    const products = JSON.parse(this.localStorage.getItem('products')) || []
+    const product = products.find((product) => {
+      if(product.id === productId) return product
+    })
+    return product
+  }
+
   updateProduct(newProduct) {
     const products = JSON.parse(this.localStorage.getItem('products')) || []
     const updatedProducts = products.map((product) => {
